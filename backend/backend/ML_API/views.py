@@ -204,7 +204,9 @@ def getUniformRandomDistCats(excluded_cat=["Default"], random_size = 32):
      collection = db.images
      categories = collection.distinct("category")
      numCats, Cats = Categories()
-     unif_size = int(random_size/numCats)
+     unif_size = 0
+     if(numCats > 0):
+          unif_size = int(random_size/numCats)
      unif_random_cats = []
      for category in categories:
           if(category in excluded_cat):
