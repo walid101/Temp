@@ -83,16 +83,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'CLIENT' : {
-            "host":"mongodb+srv://dbuser:YSHHbWgldJNQ3xIE@cluster0.1otrah0.mongodb.net/?retryWrites=true&w=majority",
-            "name":"LogBook"
-        }
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -140,11 +130,3 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-DEFAULT_FILE_STORAGE = 'django_gridfs_storage.storage.GridFSStorage'
-GRIDFS_STORAGE_OPTIONS = {
-    'host': 'mongodb+srv://dbuser:YSHHbWgldJNQ3xIE@cluster0.1otrah0.mongodb.net/?retryWrites=true&w=majority',
-    'port': 27017,
-    'database': 'LogBook',
-    'collection': 'CvImages'
-}
