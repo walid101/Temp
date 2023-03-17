@@ -332,8 +332,8 @@ def predict(request):
                          #get conf score (Do Later) #https://medium.com/@manoveg/multi-class-text-classification-with-probability-prediction-for-each-class-using-linearsvc-in-289189fbb100
                          max_conf_cat = cat
                          max_conf = pred[0][1]
-          if(max_conf < 0.5):
-               max_conf_cat = "Category Not Learned"
+          # if(max_conf < 0.5):
+          #      max_conf_cat = "Category Not Learned"
           return JsonResponse(max_conf_cat, safe=False)
      return JsonResponse("Invalid Request")
 
