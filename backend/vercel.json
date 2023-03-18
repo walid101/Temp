@@ -11,5 +11,10 @@
       "src": "/(.*)",
       "dest": "backend/wsgi.py"
     }
-  ]
+  ],
+  "functions": {
+    "ML_API/**/*.py": {
+      "excludeFiles": "public/**"
+    }
+  }
 }
