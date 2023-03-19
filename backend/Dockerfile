@@ -28,5 +28,5 @@ EXPOSE 8000
 
 # replace demo.wsgi with <project_name>.wsgi
 # CMD env/bin/activate && exec python myapp.py
-CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "backend.wsgi"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "2", "backend.wsgi"]
 
