@@ -9,6 +9,8 @@ RUN mkdir -p /code
 
 WORKDIR /code
 
+# RUN python3 -m venv env
+
 COPY requirements.txt /tmp/requirements.txt
 
 RUN set -ex && \
@@ -25,5 +27,6 @@ RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 EXPOSE 8000
 
 # replace demo.wsgi with <project_name>.wsgi
+# CMD env/bin/activate && exec python myapp.py
 CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "backend.wsgi"]
 
