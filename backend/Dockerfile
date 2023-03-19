@@ -24,9 +24,9 @@ RUN python manage.py collectstatic --noinput
 
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
-EXPOSE 443
+EXPOSE 8000
 
 # replace demo.wsgi with <project_name>.wsgi
 # CMD env/bin/activate && exec python myapp.py
-CMD ["gunicorn", "--bind", ":443", "--workers", "2", "backend.wsgi"]
+CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "backend.wsgi"]
 
