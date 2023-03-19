@@ -22,7 +22,7 @@ from skimage.feature import hog
 from skimage import io as skio
 from sklearn.svm import LinearSVC, SVC
 from sklearn.calibration import CalibratedClassifierCV
-import cv2, dill
+import cv2
 import re, json, pickle
 from bs4 import BeautifulSoup as bs
 
@@ -177,7 +177,8 @@ def saveClassifier(category, clf):
      try:
           pickled_clf = pickle.dumps(clf)
      except:
-          pickled_clf = dill.dumps(clf)
+          return
+          #pickled_clf = dill.dumps(clf)
      clfs = db.classifiers
      db_clf = {
           'category': category,
